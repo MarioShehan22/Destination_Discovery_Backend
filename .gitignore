@@ -1,0 +1,9 @@
+
+.idea/
+*.iml
+out/
+target/
+.DS_Store
+*.pdf/
+package-lock.json
+node_modules
