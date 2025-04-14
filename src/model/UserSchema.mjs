@@ -17,8 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     password: {
         type: String,
@@ -28,25 +27,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    profilePhoto: {
-        type: String
-    },
     userType: {
         type: String,
         enum: ['Admin', 'Guide', 'Tourist'],
         required: true
-    },
-    // Guide-specific fields
-    expertise: [
-        { type: String }
-    ],
-    languages: [
-        { type: String }
-    ],
-    is_active: {
-        type: Boolean,
-        required: true,
-        default: true
     },
     // Common fields
     date_joined: {

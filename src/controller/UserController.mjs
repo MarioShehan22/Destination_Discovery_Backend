@@ -15,7 +15,7 @@ const save = async (req, res)=>{
         user = new User({
             firstName, lastName, email, username, password, phoneNumber, userType,
             // Add additional fields based on userType
-            ...(userType === 'Guide' && { expertise: req.body.expertise, languages: req.body.languages })
+            // ...(userType === 'Guide' && { expertise: req.body.expertise, languages: req.body.languages })
         });
 
         await user.save();
@@ -37,14 +37,14 @@ const login = async (req, res) => {
         if (!user) return res.status(400).json({ message: 'Invalid Email' });
 
         // Compare password
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compare(password, user?.password);
         if (!isMatch) return res.status(400).json({ message: 'Invalid Password' });
 
         // Generate JWT
         const payload = {
             user: {
-                _id: user._id,
-                userType: user.userType
+                _id: user?._id,
+                userType: user?.userType
             }
         };
 

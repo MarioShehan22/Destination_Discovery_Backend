@@ -11,7 +11,7 @@ const doc = {
 const outputFile = './swagger-output.json';
 const routes = [
     '../route/UserRouter.mjs',
-    // './route/userRoute.mjs',
+     '../route/TourRouter.mjs',
     // './route/ReviewRouter.mjs',
     // './route/BookingRouter.mjs'
 ];

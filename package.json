@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node ./src/index.mjs",
+    "start": "nodemon ./src/index.mjs",
     "swagger": "node ./src/utils/swagger.mjs"
   },
   "type": "commonjs",
@@ -19,6 +19,7 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.12.1",
+    "nodemon": "^3.1.9",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {

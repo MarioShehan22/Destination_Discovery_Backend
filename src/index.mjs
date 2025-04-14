@@ -7,6 +7,9 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerFile from './utils/swagger-output.json' assert { type: 'json' };
 
 import userRoute from './route/UserRouter.mjs';
+import TourRouter from "./route/TourRouter.mjs";
+import BookingRouter from "./route/BookingRouter.mjs";
+import AdminRouter from "./route/AdminRouter.mjs";
 
 const port = process.env.SERVER_PORT || 3000;
 
@@ -38,7 +41,7 @@ app.get('/test-api', (req, resp) => {
 });
 
 app.use('/api/v1/users', userRoute);
-// app.use('/api/v1/orders',orderRoute);
-// app.use('/api/v1/products',productRoute);
-// app.use('/api/v1/customers',customerRoute);
+app.use('/api/v1/tour',TourRouter);
+app.use('/api/v1/booking',BookingRouter);
+app.use('/api/v1/admin',AdminRouter);
 // app.use('/api/v1/employee',employeeRoute);
