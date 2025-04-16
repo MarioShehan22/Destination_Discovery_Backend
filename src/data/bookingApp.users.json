@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "67e3f4ca2cf54dd878d08d8c"
+  },
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "username": "johndoe",
+  "password": "$2b$10$VBBoR2DwCzbBVtV2h/rf0ut5aVOL.95xxoyRDefIn7F/8A00D/PAi",
+  "phoneNumber": "1234567890",
+  "userType": "Tourist",
+  "expertise": [],
+  "languages": [],
+  "is_active": true,
+  "date_joined": {
+    "$date": "2025-03-26T12:36:26.488Z"
+  },
+  "last_login": {
+    "$date": "2025-03-26T12:36:26.489Z"
+  },
+  "__v": 0
+}]

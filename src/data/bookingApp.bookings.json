@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "67f9025ded523cc8fcf8dbb5"
+  },
+  "tourId": {
+    "$oid": "67f90149ff73ecca93497fb0"
+  },
+  "touristId": {
+    "$oid": "67e3f4ca2cf54dd878d08d8c"
+  },
+  "participantCount": 6,
+  "totalPrice": 199.96,
+  "status": "pending",
+  "paymentStatus": "pending",
+  "specialRequests": "any",
+  "bookingDate": {
+    "$date": "2025-04-11T11:51:57.129Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fc0ea8a36fa130d13db46a"
+  },
+  "tourId": {
+    "$oid": "67f90149ff73ecca93497fb0"
+  },
+  "touristId": {
+    "$oid": "67e3f4ca2cf54dd878d08d8c"
+  },
+  "participantCount": 3,
+  "totalPrice": 149.97,
+  "status": "pending",
+  "paymentStatus": "pending",
+  "specialRequests": "bbbbb",
+  "bookingDate": {
+    "$date": "2025-04-13T19:21:12.238Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fc0ebea36fa130d13db46e"
+  },
+  "tourId": {
+    "$oid": "67f90149ff73ecca93497fb0"
+  },
+  "touristId": {
+    "$oid": "67e3f4ca2cf54dd878d08d8c"
+  },
+  "participantCount": 6,
+  "totalPrice": 299.94,
+  "status": "pending",
+  "paymentStatus": "pending",
+  "specialRequests": "bbbbb",
+  "bookingDate": {
+    "$date": "2025-04-13T19:21:34.572Z"
+  },
+  "__v": 0
+}]
