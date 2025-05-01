@@ -1,29 +1,10 @@
 import TourSchema from "../model/TourSchema.mjs";
-import BookingSchema from "../model/BookingSchema.mjs";
 
 const create = async (req, res) => {
     try {
-        const { title, description, location, startDate, endDate, duration, price, maxParticipants, cancellationPolicy } = req.body;
-
-        // Use req.body.id or a hardcoded ID for testing purposes
-        const guideId = req.user?.id || req.body.id || "6437a99b2c7b2e001fc1e871"; // Example MongoDB ObjectId
-
-        const tour = new TourSchema({
-            title,
-            description,
-            location,
-            startDate,
-            endDate,
-            duration,
-            price,
-            maxParticipants,
-            guideId: guideId,
-            cancellationPolicy,
-            images: req.body.images || []
-        });
-
-        await tour.save();
-        res.json(tour);
+        const tourSchema = new TourSchema(req.body);
+        await tourSchema.save();
+        res.status(201).send({"message": "Tour Save successfully"});
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
@@ -59,6 +40,80 @@ const getAll = async (req,res)=>{
         res.status(500).send('Server error');
     }
 }
+
+const findAll = async (req,res)=>{
+    try {
+        const tour = await TourSchema.find();
+        if (!tour) return res.status(404).json({ message: 'No Tour Data' });
+        const count = await TourSchema.countDocuments();
+
+        res.status(200).json({message:"data list",dataCount:count,data:tour});
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+}
+
+const updateTourStatus = async (req,res)=>{
+    try {
+        const {id} = req.params;
+        const {status}= req.body;
+        if(!['Active', 'Completed', 'Cancelled'].includes(status)){
+            return res.status(400).json({message:"invalid tour status",data:null});
+        }
+
+        const updatedOrder = await TourSchema.findByIdAndUpdate(
+            id,{status},{new:true,}
+        );
+        if(updatedOrder){
+            return res.status(201).json({message:"tour updated",data:updatedOrder});
+        }
+        res.status(404).json({message:"tour not found!"});
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+}
+
+
+const findById = async (req, res) => {
+    try {
+        const {id} = req.params;
+        if (!id) {
+            return res.status(400).json({code: 400, message: 'tour id is missing!..', data: null});
+        }
+        const Data =
+            await TourSchema.findById({'_id': req.params.id});
+        if (Data) {
+            return res.status(200).json({code: 200, message: 'tour data...', data: Data});
+        }
+        return res.status(404).json({code: 404, message: 'tour data not found...', data: null});
+    } catch (e) {
+        res.status(500).json({code: 500, message: 'something went wrong...', error: e});
+    }
+}
+const findByGuideId = async (req, res) => {
+    try {
+        const { id } = req.params;
+        if (!id) {
+            return res.status(400).json({ code: 400, message: 'guide id is missing!..', data: null });
+        }
+        // Use findOne and query by guideId
+        const Data = await TourSchema.find({ guideId: id });
+        if (Data) {
+            return res.status(200).json({ code: 200, message: 'tour data...', data: Data });
+        }
+        return res.status(404).json({ code: 404, message: 'tour data not found...', data: null });
+    } catch (e) {
+        res.status(500).json({ code: 500, message: 'something went wrong...', error: e });
+    }
+}
+
 export {
-    create
+    create,
+    getAll,
+    updateTourStatus,
+    findAll,
+    findById,
+    findByGuideId
 }

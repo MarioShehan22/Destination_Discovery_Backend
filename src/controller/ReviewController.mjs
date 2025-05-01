@@ -44,7 +44,36 @@ const create = async (req,res)=>{
     }
 }
 
+const findAll = async (req, res) => {
+    try {
+        //find all review using ReviewSchema
+        const review = await ReviewSchema.find();
+        //If review data is not returned
+        if (!review) return res.status(404).json({ message: 'No review found' });
+        //Count number of review data
+        const count = await ReviewSchema.countDocuments();
+
+        res.status(200).json({message:"review data list",dataCount:count,data:review});
+    }catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+}
+
+const remove = async (req,res)=>{
+    try {
+        const reviewId = req.params.id;
+        if (!reviewId) return res.status(404).json({ message: 'No review id provide' });
+        const temp = await ReviewSchema.deleteOne({_id: userId});
+        res.status(204).json({message:"review was delete",data:temp});
+    }catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+}
 export {
-    create
+    create,
+    remove,
+    findAll,
 }
 

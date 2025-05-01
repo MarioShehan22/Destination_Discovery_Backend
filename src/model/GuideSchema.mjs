@@ -1,6 +1,19 @@
 import mongoose from "mongoose";
 
 const GuideSchema = new mongoose.Schema({
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     profilePhoto: {
         type: String
     },
@@ -10,6 +23,16 @@ const GuideSchema = new mongoose.Schema({
     languages: [
         { type: String }
     ],
+    bio:{
+        type: String,
+    },
+    education:{
+        type: String
+    },
+    phoneNumber: {
+        type: String,
+        required: true
+    },
     is_active: {
         type: Boolean,
         required: true,

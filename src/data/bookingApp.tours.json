@@ -23,10 +23,25 @@
     "downtown-tour-2.jpg",
     "historical-landmark.jpg"
   ],
-  "status": "active",
+  "status": "Active",
   "cancellationPolicy": "Full refund if cancelled 24 hours before the tour starts. 50% refund if cancelled within 24 hours.",
   "createdAt": {
     "$date": "2025-04-11T11:47:21.201Z"
   },
   "__v": 0
-}]
+},
+  {
+    "title": "Historical Downtown Walking Tour",
+    "description": "Explore the rich history of downtown with our expert-guided walking tour. Visit historical landmarks, learn fascinating stories, and discover hidden gems of the city.",
+    "location": "San Francisco, CA",
+    "startDate": "2025-05-15T10:00:00.000Z",
+    "endDate":"2025-05-15T13:00:00.000Z",
+    "duration": 3,
+    "price": 49.99,
+    "maxParticipants": 15,
+    "currentParticipants": 15,
+    "guideId":  "6437a99b2c7b2e001fc1e871",
+    "status": "Active",
+    "cancellationPolicy": "Full refund if cancelled 24 hours before the tour starts. 50% refund if cancelled within 24 hours."
+  }
+]

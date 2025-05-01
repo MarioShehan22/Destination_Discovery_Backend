@@ -1,22 +1,36 @@
-[{
-  "_id": {
-    "$oid": "67e3f4ca2cf54dd878d08d8c"
+[
+  {
+    "_id": {
+      "$oid": "67ff9b7a75be0378caf22961"
+    },
+    "email": "shehan@gmail.com",
+    "username": "shehan",
+    "password": "$2b$10$a0HvRw8XE07vQlxtjzO4quzY.HDSyAesWoVDlF5f58wTEPb0pPW46",
+    "date_joined": {
+      "$date": "2025-04-16T11:58:50.799Z"
+    },
+    "last_login": {
+      "$date": "2025-04-16T11:58:50.799Z"
+    },
+    "__v": 0,
+    "is_active": true,
+    "role": "Guide"
   },
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john.doe@example.com",
-  "username": "johndoe",
-  "password": "$2b$10$VBBoR2DwCzbBVtV2h/rf0ut5aVOL.95xxoyRDefIn7F/8A00D/PAi",
-  "phoneNumber": "1234567890",
-  "userType": "Tourist",
-  "expertise": [],
-  "languages": [],
-  "is_active": true,
-  "date_joined": {
-    "$date": "2025-03-26T12:36:26.488Z"
-  },
-  "last_login": {
-    "$date": "2025-03-26T12:36:26.489Z"
-  },
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "6801f0d0c1e0dedad6176f0b"
+    },
+    "email": "mario@gmail.com",
+    "username": "mario",
+    "password": "$2b$10$.o0EkFduxaskQQBSkGgu7utACELjnQiSDRWuZWZjiADGkMP5ZRB1y",
+    "role": "Tourist",
+    "is_active": true,
+    "date_joined": {
+      "$date": "2025-04-18T06:27:28.329Z"
+    },
+    "last_login": {
+      "$date": "2025-04-18T06:27:28.329Z"
+    },
+    "__v": 0
+  }
+]

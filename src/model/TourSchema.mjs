@@ -42,12 +42,14 @@ const tourSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    images: [
-        { type: String }
-    ],
+    image: {
+        type: String,
+        required: true
+    }
+    ,
     status: {
         type: String,
-        enum: ['active', 'completed', 'cancelled'],
+        enum: ['Active', 'Completed', 'Cancelled'],
         default: 'active'
     },
     cancellationPolicy: {

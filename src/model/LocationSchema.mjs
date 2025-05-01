@@ -9,14 +9,6 @@ const LocationSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    latitude: {
-        type: Number,
-        required: true
-    },
-    longitude: {
-        type: Number,
-        required: true
-    },
     image:{
         type: String,
         required: true
@@ -37,7 +29,7 @@ const LocationSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    facilittes: {
+    facilities: {
         type: String,
         required: false
     },
@@ -45,6 +37,10 @@ const LocationSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
+    to:{
+        type:String,
+        required:true
+    }
 });
 
 const Location = mongoose.model('location',LocationSchema);

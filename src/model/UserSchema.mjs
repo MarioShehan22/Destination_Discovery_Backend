@@ -2,14 +2,6 @@ import mongoose from 'mongoose';
 import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: true
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         required: true,
@@ -23,16 +15,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    phoneNumber: {
-        type: String,
-        required: true
-    },
-    userType: {
+    role: {
         type: String,
         enum: ['Admin', 'Guide', 'Tourist'],
         required: true
     },
-    // Common fields
     date_joined: {
         type: Date,
         default: Date.now
@@ -40,6 +27,11 @@ const userSchema = new mongoose.Schema({
     last_login: {
         type: Date,
         default: Date.now
+    },
+    is_active: {
+        type: Boolean,
+        required: true,
+        default: true
     },
 });
 
